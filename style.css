@@ -1,0 +1,137 @@
+    :root {
+      --primary-bg: #0f172a;
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      --glass-bg: rgba(30, 41, 59, 0.7);
+      --header-bg: #020617;
+      --border-color: #334155;
+      --text-main: #f8fafc;
+    }
+
+    body {
+      font-family: 'Public Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--primary-bg);
+      color: var(--text-main);
+    }
+
+    header {
+      background: var(--header-bg);
+      border-bottom: 3px solid;
+      border-image: var(--accent-gradient) 1;
+      z-index: 100;
+    }
+
+    .ribbon {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      padding: 15px 25px;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid var(--border-color);
+      padding-right: 25px;
+    }
+
+    .group:last-child { border: none; }
+
+    .group-label {
+      font-size: 10px;
+      color: #818cf8;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-tool, .add-btn {
+      background: var(--accent-gradient);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-tool {
+      background: rgba(255,255,255,0.08);
+    }
+
+    input, select {
+      background: #1e293b;
+      color: white;
+      border: 1px solid var(--border-color);
+      padding: 8px 12px;
+      border-radius: 8px;
+      outline: none;
+      min-width: 130px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #mapView {
+      flex: 1;
+      width: 100%;
+    }
+
+    #tableContainer {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      height: 35vh;
+      background: rgba(15,23,42,0.95);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      display: none;
+      flex-direction: column;
+      z-index: 20;
+      box-shadow: 0 -10px 40px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .table-header {
+      background: var(--accent-gradient);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    #tableDiv {
+      flex: 1;
+      overflow: auto;
+    }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini GIS</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/dark/main.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="ribbon">
+    <div class="group">
+      <div class="controls">
+        <select id="selectValue">
+          <option value="">+ Create Layer</option>
+          <option value="point">Point</option>
+          <option value="polyline">Line</option>
+          <option value="polygon">Polygon</option>
+        </select>
+        <button id="toggleTableBtn" class="btn-tool">
+          <span class="material-symbols-outlined">table_rows</span> Table
+        </button>
+      </div>
+      <div class="group-label">Layers</div>
+    </div>
+
+    <div class="group">
+      <div class="controls">
+        <input type="text" id="fieldName" placeholder="Field name">
+        <select id="fieldType">
+          <option value="string">String</option>
+          <option value="double">Number</option>
+        </select>
+        <button id="addFieldBtn" class="add-btn">+ Add Field</button>
+      </div>
+      <div class="group-label">Attributes</div>
+    </div>
+
+    <div class="group" style="border:none;">
+      <div class="controls" style="gap:8px;">
+        <input type="number" id="bufferDistance" placeholder="Buffer (m)">
+        <button id="bufferBtn" class="add-btn">Buffer</button>
+        <button id="distanceBtn" class="add-btn">Distance</button>
+        <select id="targetLayer"><option value="">Target Layer</option></select>
+        <select id="clipperLayer"><option value="">Clipper (Polygon)</option></select>
+        <button id="clipBtn" class="add-btn">Clip</button>
+      </div>
+      <div class="group-label">Analysis</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="mapView"></div>
+  <div id="tableContainer">
+    <div class="table-header">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="material-symbols-outlined">table_rows</span>
+        <span id="activeLayerTitle">Attribute Table</span>
+      </div>
+      <span class="material-symbols-outlined close-btn" onclick="document.getElementById('toggleTableBtn').click()">close</span>
+    </div>
+    <div id="tableDiv"></div>
+  </div>
+</main>
+
+<script src="https://js.arcgis.com/4.28/"></script>
+
+<script src="main.js"></script>
+</body>
+</html>
