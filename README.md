@@ -1,58 +1,73 @@
-# Mini GIS  - Spatial Analysis
-A simple, beautiful web-based GIS (Geographic Information System) tool  
-Built with ArcGIS JavaScript API 4.28
+# Mini GIS Pro - Spatial Analysis
 
-## What is this app?
-This is a **mini GIS application** that runs directly in your browser (no installation needed).  
-You can:
-- Create different types of map layers (points, lines, polygons)
-- Draw shapes on the satellite map
-- Edit and see attributes in a table
-- Use basic analysis tools (measure distance, buffer, clip)
+## Description
+This is a web-based GIS application built using the **Esri ArcGIS JavaScript SDK (4.28)**.  
+It allows users to:
 
-It's perfect for beginners who want to learn GIS or make quick maps.
+- Create point, line, and polygon layers dynamically.
+- Add custom attributes/fields to layers.
+- Display an interactive **attribute table** for editing and highlighting features.
+- Perform **basic spatial analysis**:
+  - Measure distance between two points.
+  - Create buffers around selected features.
+  - Clip one layer using another polygon layer.
+- Manage layers using a **Layer List** widget integrated into an expandable UI.
 
-## Features (What you can do)
-- **Create Layers**  
-  Choose Point, Line, or Polygon → a new editable layer appears on the map
+The interface is fully **responsive** and styled with a modern dark theme.
 
-- **Draw & Edit**  
-  Use the Editor tool (top-right) to draw shapes  
-  Click shapes to edit/move/delete them
+---
 
-- **Attributes Table**  
-  Click "Table" button → see and edit feature information  
-  Table appears at the bottom of the screen
+## Features
 
-- **Analysis Tools** (in the top bar):
-  - **Distance**: Click two points → see distance in meters
-  - **Buffer**: Enter distance → (placeholder - select features in table first)
-  - **Clip**: Select two layers → (placeholder - real clip can be added later)
+1. **Layer Management**
+   - Add layers dynamically (Point, Line, Polygon)
+   - Name and customize fields
+   - View and edit features via a feature table
+   - Expandable Layer List widget
 
-## How to Use (Step by Step for Beginners)
-1. Open the file in any web browser (Chrome, Firefox, Edge...)
-2. On the top bar:
-   - Choose layer type (Point / Line / Polygon) from the first dropdown
-3. A new layer appears on the map
-4. Click the pencil icon (top-right) to start drawing
-5. Draw your shapes on the map
-6. Click "Table" button → see your drawn features in a nice table
-7. Click rows in table to select/highlight features
-8. Try the tools:
-   - Distance: Click two places
-   - Buffer & Clip: Select layers/features first (tools show messages for now)
+2. **Spatial Analysis Tools**
+   - **Distance Measurement**: Click two points to measure geodesic distance
+   - **Buffer**: Create buffers around selected features
+   - **Clip**: Clip a target layer using a polygon layer
 
-## Technologies Used (Simple Explanation)
-- **HTML + CSS**: Makes the beautiful dark interface
-- **ArcGIS JavaScript API 4.28**: The magic that creates the map, layers, drawing, and analysis
-- **Google Fonts & Material Symbols**: Nice text and icons
+3. **UI Enhancements**
+   - Modern dark-themed interface
+   - Interactive popups for messages instead of default alerts
+   - Responsive design for different screen sizes
+
+---
+
+## Technologies Used
+
+- **HTML5 / CSS3 / JavaScript**
+- **Esri ArcGIS JavaScript API v4.28**
+- **Esri Widgets**: Editor, FeatureTable, LayerList, Expand
+- **Geometry Engine**: For geodesic calculations and spatial analysis
+
+---
 
 ## How to Run
-Just double-click the HTML file — it works offline!  
-(No server needed)
 
-## Future Ideas (Easy Improvements)
-- Make Buffer actually create buffer shapes around selected features
-- Make Clip really cut one layer using another
+1. Open `index.html` in a modern web browser (Chrome, Firefox, Edge).
+2. Use the **Layer Selector** to create a new layer.
+3. Add fields using the **Attributes** section.
+4. Open the **Attribute Table** to view or edit features.
+5. Use **Analysis Tools** to measure distance, create buffers, or clip layers.
 
-Enjoy mapping! 🗺️✨
+---
+
+## Notes
+
+- This project demonstrates integration with **Esri ArcGIS JS SDK**.
+- The spatial analysis tools are **beginner-friendly implementations**, expandable for more complex GIS tasks.
+- Popups are used for better user experience instead of default browser alerts.
+
+---
+
+## Author
+
+Developed by **[Moamen Mohamed]**  
+Worked extensively with **Esri ArcGIS JavaScript SDK** to implement dynamic GIS layers, attribute editing, and spatial analysis features.
+
+---
+
