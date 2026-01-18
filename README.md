@@ -1,4 +1,4 @@
-# Mini GIS Pro - Spatial Analysis
+# Mini GIS  - Spatial Analysis
 
 ## Description
 This is a web-based GIS application built using the **Esri ArcGIS JavaScript SDK (4.28)**.  
