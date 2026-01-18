@@ -105,7 +105,7 @@ require([
 
     map.add(currentLayer);
     updateFeatureTable(currentLayer);
-    updateDropdowns(); // Refresh dropdowns after adding layer
+    updateDropdowns(); 
 
     if (!editor) {
       editor = new Editor({ view: view });
@@ -119,7 +119,7 @@ require([
         setTimeout(() => {
           const rowCount = featureTable.rows.length;
           if (rowCount > 0) {
-            featureTable.scrollToRow(rowCount - 1); // Scroll to newest row
+            featureTable.scrollToRow(rowCount - 1); 
           }
         }, 300);
       }
@@ -138,9 +138,6 @@ require([
     return { type: "simple", symbol: symbol };
   }
 
-  // ============================================================================
-  // Analysis Tools (now fully working)
-  // ============================================================================
 
   document.getElementById("distanceBtn").onclick = function() {
     alert("Click two points on the map");
@@ -215,7 +212,7 @@ require([
       });
 
       map.add(bufferLayer);
-      updateDropdowns(); // Refresh dropdowns after buffer
+      updateDropdowns(); 
       alert(`Buffer created (${bufferGraphics.length} features)`);
 
     } catch (err) {
@@ -242,7 +239,7 @@ require([
     }
 
     try {
-      // Get clipper geometry (union all)
+     
       const clipQ = clipper.createQuery();
       clipQ.where = "1=1";
       clipQ.returnGeometry = true;
@@ -295,7 +292,7 @@ require([
       });
 
       map.add(clipLayer);
-      updateDropdowns(); // Refresh dropdowns after clip
+      updateDropdowns(); 
       alert(`Clip completed (${clippedGraphics.length} features)`);
 
     } catch (err) {
@@ -304,8 +301,8 @@ require([
     }
   };
 
-  // Auto-update dropdowns when layers change
+
   map.layers.on("change", updateDropdowns);
-  updateDropdowns(); // Initial call
+  updateDropdowns(); 
 
 });
